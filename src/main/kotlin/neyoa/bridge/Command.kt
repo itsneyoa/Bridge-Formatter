@@ -2,6 +2,7 @@ package neyoa.bridge
 
 import net.minecraft.command.CommandBase
 import net.minecraft.command.ICommandSender
+import net.minecraft.util.BlockPos
 
 class Command : CommandBase() {
     companion object {
@@ -16,7 +17,17 @@ class Command : CommandBase() {
 
     override fun getRequiredPermissionLevel() = 0
 
-    private fun openGui() = run { Bridge.gui = Config.gui() }
+    override fun processCommand(sender: ICommandSender, args: Array<String>) {
+        if(args.isEmpty()) return Bridge.config.open()
 
-    override fun processCommand(sender: ICommandSender, args: Array<String>) = openGui()
+        return when (args[0]) {
+            "options" -> Bridge.chat.showConfigOptions()
+            else -> Bridge.config.open()
+        }
+    }
+
+    override fun addTabCompletionOptions(sender: ICommandSender, args: Array<String>, blockPos: BlockPos): MutableList<String> {
+        return if(args.size == 1) mutableListOf("options")
+        else mutableListOf()
+    }
 }

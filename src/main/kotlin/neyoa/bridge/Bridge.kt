@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent
 class Bridge {
     companion object {
         const val MODID = "bridgeformatter"
-        const val VERSION = "1.0.0"
+        const val VERSION = "1.0.1"
         val mc: Minecraft = Minecraft.getMinecraft()
         val config = Config
         var gui: UScreen? = null
@@ -29,6 +29,7 @@ class Bridge {
     }
 
     @Mod.EventHandler
+    @Suppress("UNUSED_PARAMETER")
     fun init(event: FMLInitializationEvent) {
         Vigilance.initialize()
         config.init()
@@ -39,9 +40,8 @@ class Bridge {
     }
 
     @SubscribeEvent
-    fun tick(event: TickEvent.ClientTickEvent) = tick()
-
-    private fun tick() {
+    @Suppress("UNUSED_PARAMETER")
+    fun tick(event: TickEvent) {
         if (gui != null) {
             try {
                 mc.displayGuiScreen(gui)
