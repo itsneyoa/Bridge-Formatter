@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "bridgeformatter",
+    "name": "neyoa's Chat Bridge Formatter",
+    "description": "A mod to reformat Chat Bridge messages",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["neyoa"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
