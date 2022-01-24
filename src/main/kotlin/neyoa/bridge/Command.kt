@@ -7,7 +7,7 @@ import net.minecraft.util.BlockPos
 class Command : CommandBase() {
     companion object {
         const val baseCommand = "chatbridge"
-        val aliases = mutableListOf("cb")
+        val aliases = mutableListOf() // Remove "cb" as it's a command built in to skyblock 
     }
 
     override fun getCommandName() = baseCommand
