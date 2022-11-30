@@ -12,7 +12,7 @@ class ChatListener {
         ).containsMatchIn(message)
 
         fun getMessageParts(message: String, chat: String): MatchResult.Destructured {
-            return Regex("^Guild > (?:\\[\\w+\\+*] )?lesbianeyoa(?: \\[\\w+])?: (?:(?<nickname>.*?): )(?<chatMessage>.+)").find(
+            return Regex("^Guild > (?:\\[\\w+\\+*] )?${Bridge.config.username.trim()}(?: \\[\\w+])?: (?:(?<nickname>.*?): )(?<chatMessage>.+)").find(
                 message
             )!!.destructured
         }
