@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent
 class Bridge {
     companion object {
         const val MODID = "bridgeformatter"
-        const val VERSION = "1.0.2"
+        const val VERSION = "1.1.0"
         val mc: Minecraft = Minecraft.getMinecraft()
         val config = Config
         var gui: UScreen? = null
